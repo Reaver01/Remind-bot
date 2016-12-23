@@ -10,7 +10,9 @@ module MainBot
 					min_args: 4,
 					permission_level: 2,
 			) do |event, days, hours, minutes, *text|
+				
 				remindertext = text.join(' ')
+
 				d = days.to_i
 				h = hours.to_i
 				m = minutes.to_i
@@ -29,9 +31,9 @@ module MainBot
 				
 				if File.file?("botfiles/reminders/#{event.user.id}")
 					userreminders = loadArr(userreminders,"botfiles/reminders/#{event.user.id}")
-					userreminders.push([t4, remindertext])
+					userreminders.push(t4, remindertext)
 				else
-					userreminders = [[t4, remindertext]]
+					userreminders = [t4, remindertext]
 				end
 
 				File.write("botfiles/reminders/#{event.user.id}", userreminders)
