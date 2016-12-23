@@ -31,9 +31,9 @@ module MainBot
 				
 				if File.file?("botfiles/reminders/#{event.user.id}")
 					userreminders = loadArr(userreminders,"botfiles/reminders/#{event.user.id}")
-					userreminders.push(t4, remindertext)
+					userreminders.push(t4.to_s, remindertext.to_s)
 				else
-					userreminders = [t4, remindertext]
+					userreminders = [t4.to_s, remindertext.to_s]
 				end
 
 				File.write("botfiles/reminders/#{event.user.id}", userreminders)
