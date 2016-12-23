@@ -25,6 +25,7 @@ module MainBot
 	$bot.include! Commands::Invite
 	$bot.include! Commands::Game
 	$bot.include! Commands::Kill
+	$bot.include! Commands::Remindme
 	puts "Commands Loaded"
 	
 	#Turn off debugging and run async

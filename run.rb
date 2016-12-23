@@ -14,6 +14,7 @@ require 'open-uri'
 require 'rufus-scheduler'
 require 'dotenv'
 require 'date'
+require 'narray'
 
 #require command files
 require_relative 'lib/bot/class/loader'
