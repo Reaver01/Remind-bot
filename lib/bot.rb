@@ -32,8 +32,8 @@ module MainBot
 	$bot.run :async
 		
 	#Set game status from file
-	if File.file?("bot/game")
-		$bot.game = getline("bot/game",1)
+	if File.file?("botfiles/game")
+		$bot.game = getline("botfiles/game",1)
 	else
 		$bot.game = 0
 	end
