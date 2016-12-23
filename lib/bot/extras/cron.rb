@@ -4,8 +4,7 @@ def cronjobs_start
 		clock=Time.new
 		puts "[#{clock.inspect}] Checking for reminders"
 
-		Dir["/botfiles/reminders/*"].each { |file|
-			puts file		
+		Dir["/botfiles/reminders/*"].each {|file| puts file	}
 #			userreminders = loadArr(userreminders, file)
 
 #			pos = 0
@@ -19,7 +18,6 @@ def cronjobs_start
 
 #				pos += 2
 #			end while pos < userreminders.length
-		}
 
 	end
 	scheduler.cron '5 */3 * * *' do
