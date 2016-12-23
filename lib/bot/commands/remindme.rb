@@ -31,7 +31,7 @@ module MainBot
 					userreminders = LoadArr(userreminders,"botfiles/reminders/#{event.user.id}")
 					userreminders.push([t4, remindertext])
 				else
-					userreminders = NArray[ [t4, remindertext] ]
+					userreminders = [[t4, remindertext]]
 				end
 
 				File.write("botfiles/reminders/#{event.user.id}", userreminders)
