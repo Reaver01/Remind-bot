@@ -28,7 +28,7 @@ module MainBot
 				m2 = m1.floor
 				
 				if File.file?("botfiles/reminders/#{event.user.id}")
-					userreminders = LoadArr(userreminders,"botfiles/reminders/#{event.user.id}")
+					userreminders = loadArr(userreminders,"botfiles/reminders/#{event.user.id}")
 					userreminders.push([t4, remindertext])
 				else
 					userreminders = [[t4, remindertext]]
