@@ -10,17 +10,17 @@ def cronjobs_start
 			userid.slice! "botfiles/reminders/"
 			puts "Checking reminders for: #{userid}"
 			userreminders = loadArr(userreminders,"botfiles/reminders/#{userid}")
-#			pos = 0
-#			begin
-#				t4 = userreminders[pos]
-#				t4 = Time.parse(t4)
-#				if t4.past?
-
-
-
-
-#				pos += 2
-#			end while pos < userreminders.length
+			pos = 0
+			begin
+				t4 = userreminders[pos]
+				t4 = Time.parse(t4)
+				if t4.past?
+					$bot.user(userid).pm("Your reminder: #{userreminders[pos+1]}")
+					userreminders.delete_at(pos+1)
+					userreminders.delete_at(pos) 
+				end
+				pos += 2
+			end while pos < userreminders.length
 		}
 	end
 	scheduler.cron '5 */3 * * *' do
