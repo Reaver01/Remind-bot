@@ -3,7 +3,7 @@ module MainBot
 		module Remindme
 			extend Discordrb::Commands::CommandContainer
 			command(
-					:game,
+					:remindme,
 					description: "Sets a reminder for the user.",
 					usage: "remindme <days> <hours> <mins> <text>",
 					help_available: true,
