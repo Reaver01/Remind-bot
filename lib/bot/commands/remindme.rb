@@ -36,7 +36,7 @@ module MainBot
 					event << "Reminder set! You have #{remindernum} reminders set" 
 				else
 					userreminders = [t4.to_s, remindertext.to_s]
-					even << "Reminder set! This is your only reminder. You can set as many as you like!"
+					event << "Reminder set! This is your only reminder. You can set as many as you like!"
 				end
 
 				File.write("botfiles/reminders/#{event.user.id}", userreminders)
