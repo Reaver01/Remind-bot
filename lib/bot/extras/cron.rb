@@ -9,7 +9,7 @@ def cronjobs_start
 			userid = file
 			userid.slice! "botfiles/reminders/"
 			puts "Checking reminders for: #{userid}"
-			userreminders = loadArr(userreminders, file)
+			userreminders = loadArr(userreminders,"botfiles/reminders/#{userid}")
 #			pos = 0
 #			begin
 #				t4 = userreminders[pos]
