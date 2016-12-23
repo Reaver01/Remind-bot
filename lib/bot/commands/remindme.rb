@@ -8,7 +8,6 @@ module MainBot
 					usage: "remindme <days> <hours> <mins> <text>",
 					help_available: true,
 					min_args: 4,
-					permission_level: 2,
 			) do |event, days, hours, minutes, *text|
 				
 				remindertext = text.join(' ')
