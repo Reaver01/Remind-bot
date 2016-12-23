@@ -5,20 +5,20 @@ def cronjobs_start
 		puts "[#{clock.inspect}] Checking for reminders"
 
 		Dir["/botfiles/reminders/*"].each { |file|
-		puts file		
-#		userreminders = loadArr(userreminders, file)
+			puts file		
+#			userreminders = loadArr(userreminders, file)
 
-#		pos = 0
-#		begin
-#			t4 = userreminders[pos]
-#			t4 = Time.parse(t4)
-#			if t4.past?
-
-
+#			pos = 0
+#			begin
+#				t4 = userreminders[pos]
+#				t4 = Time.parse(t4)
+#				if t4.past?
 
 
-#			pos += 2
-#		end while pos < userreminders.length
+
+
+#				pos += 2
+#			end while pos < userreminders.length
 		}
 
 	end
