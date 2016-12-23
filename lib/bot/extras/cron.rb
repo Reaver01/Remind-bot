@@ -22,7 +22,12 @@ def cronjobs_start
 				end
 				pos += 2
 			end while pos < userreminders.length
-			File.write("botfiles/reminders/#{userid}", userreminders)
+
+			if userreminders.length == 0
+				File.delete("botfiles/reminders/#{userid}")
+			else
+				File.write("botfiles/reminders/#{userid}", userreminders)
+			end
 		}
 	end
 	scheduler.cron '5 */3 * * *' do
