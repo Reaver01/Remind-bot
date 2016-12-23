@@ -32,8 +32,11 @@ module MainBot
 				if File.file?("botfiles/reminders/#{event.user.id}")
 					userreminders = loadArr(userreminders,"botfiles/reminders/#{event.user.id}")
 					userreminders.push(t4.to_s, remindertext.to_s)
+					remindernum = userreminders.length.to_i / 2
+					event << "Reminder set! You have #{remindernum} reminders set" 
 				else
 					userreminders = [t4.to_s, remindertext.to_s]
+					even << "Reminder set! This is your only reminder. You can set as many as you like!"
 				end
 
 				File.write("botfiles/reminders/#{event.user.id}", userreminders)
