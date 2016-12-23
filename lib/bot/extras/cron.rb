@@ -15,7 +15,7 @@ def cronjobs_start
 				t4 = userreminders[pos]
 				t4 = Time.parse(t4)
 				if t4.past?
-					$bot.user(userid).pm("Your reminder: #{userreminders[pos+1]}")
+					$bot.user(userid).pm("Your reminder for #{userreminders[pos]}: #{userreminders[pos+1]}")
 					userreminders.delete_at(pos+1)
 					userreminders.delete_at(pos)
 					pos -= 2
