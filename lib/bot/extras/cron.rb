@@ -22,7 +22,7 @@ def cronjobs_start
 
 #				pos += 2
 #			end while pos < userreminders.length
-
+		}
 	end
 	scheduler.cron '5 */3 * * *' do
 		$bot.stop
