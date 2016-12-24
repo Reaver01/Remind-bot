@@ -19,14 +19,6 @@ module MainBot
 				t2 = t1 + m*60
 				t3 = t2 + h*60*60
 				t4 = t3 + d*24*60*60
-				d1 = TimeDifference.between(t1, t4).in_days
-				h1 = TimeDifference.between(t1, t4).in_hours
-				m1 = TimeDifference.between(t1, t4).in_minutes
-				d2 = d1.floor
-				h1 = h1-24*d2
-				h2 = h1.floor
-				m1 = m1-60*h2-24*60*d2
-				m2 = m1.floor
 				
 				if File.file?("botfiles/reminders/#{event.user.id}")
 					userreminders = loadArr(userreminders,"botfiles/reminders/#{event.user.id}")
