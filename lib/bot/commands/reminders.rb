@@ -17,7 +17,7 @@ module MainBot
 						begin
 							output += "Reminder #{y}: #{userreminders[x+1]} @ #{userreminders[x]}\n"
 							x += 2
-							Y += 1
+							y += 1
 						end while x < userreminders.length
 						output += "```"
 						event << output
