@@ -41,7 +41,7 @@ module MainBot
 
 				File.write("botfiles/reminders/#{event.user.id}", userreminders)
 
-				puts "#{event.timestamp}: #{event.user.name}: CMD: remindme"
+				puts "#{event.timestamp}: #{event.user.name}: CMD: reminders"
 				nil
 			end
 		end
