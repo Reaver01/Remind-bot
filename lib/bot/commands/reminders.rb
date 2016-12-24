@@ -25,9 +25,11 @@ module MainBot
 						if number == "all"
 							File.delete("botfiles/reminders/#{userid}")
 						else
+							output = "The following reminder was deleted:\n    Reminder #{number}: @ #{userreminders[userreminders.delete_at((number.to_i-1)*2+1)]}"
 							userreminders.delete_at((number.to_i-1)*2+1)
 							userreminders.delete_at((number.to_i-1)*2)
 							File.write("botfiles/reminders/#{event.user.id}", userreminders)
+							event << output
 						end
 					else
 						remindernum = userreminders.length.to_i / 2
