@@ -11,7 +11,7 @@ module MainBot
 					permission_level: 2,
 			) do |event, *text|
 				gametext = text.join(' ')
-				File.write('bot/game', gametext)
+				File.write('botfiles/game', gametext)
 				$bot.game = gametext
 				puts "#{event.timestamp}: #{event.user.name}: CMD: game <#{gametext}>"
 				nil
