@@ -6,8 +6,7 @@ module MainBot
 					:reminders,
 					description: "Manage set reminders.",
 					usage: "reminders <list|delete> <number>",
-					help_available: true,
-					min_args: 4,
+					help_available: true
 			) do |event, option, number|
 				if File.file?("botfiles/reminders/#{event.user.id}")
 					userreminders = loadArr(userreminders,"botfiles/reminders/#{event.user.id}")
