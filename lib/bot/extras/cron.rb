@@ -1,6 +1,6 @@
 def cronjobs_start
 	scheduler = Rufus::Scheduler.new
-	scheduler.cron '*/1 * * * *' do
+	scheduler.every '10s' do
 		clock=Time.new
 		puts "[#{clock.inspect}] Checking for reminders"
 
