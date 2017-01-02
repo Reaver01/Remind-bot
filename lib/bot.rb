@@ -1,5 +1,4 @@
 module MainBot
-	include Sys
 	require 'active_support'
 	require 'date'
 	require 'discordrb'
@@ -12,6 +11,7 @@ module MainBot
 	require 'time'
 	require 'time_difference'
 	require 'yaml'
+	include Sys
 	Dir["lib/bot/class/*.rb"].each {|file| require_relative file }
 	Dir["bot/extras/*.rb"].each {|file| require_relative file }
 	Dir["lib/bot/commands/*.rb"].each {|file| require_relative file }
