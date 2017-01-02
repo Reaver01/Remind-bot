@@ -12,8 +12,8 @@ module MainBot
 	require 'time_difference'
 	require 'yaml'
 	include Sys
-	Dir["lib/bot/class/*.rb"].each {|file| require_relative file }
-	Dir["bot/extras/*.rb"].each {|file| require_relative file }
+	require_relative 'lib/bot/class/loader'
+	require_relative 'bot/extras/cron'
 	Dir["lib/bot/commands/*.rb"].each {|file| require_relative file }
 
 	Dotenv.load
