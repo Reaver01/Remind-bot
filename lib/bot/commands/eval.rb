@@ -7,8 +7,7 @@ module MainBot
 					description: "Evaluates code.",
 					useage: "eval <code>",
 					help_available: false,
-					permission_level: 800,
-					permission_message: "I'm sorry Dave, I cannot do that.",
+					permission_level: 800
 			) do |event, *code|
 				puts "#{event.timestamp}: #{event.user.name}: CMD: eval <#{code.join(' ')}>"
 				begin
