@@ -1,20 +1,4 @@
 module MainBot
-	require 'active_support'
-	require 'date'
-	require 'discordrb'
-	require 'discordrb/data'
-	require 'dotenv'
-	require 'json'
-	require 'rubygems'
-	require 'rufus-scheduler'
-	require 'sys/uptime'
-	require 'time'
-	require 'time_difference'
-	require 'yaml'
-	include Sys
-	require_relative 'bot/extras/cron'
-	Dir["bot/commands/*.rb"].each {|file| require_relative file }
-
 	Dotenv.load
 	puts "Credentials initialized!"
 
