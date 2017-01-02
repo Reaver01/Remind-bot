@@ -1,5 +1,20 @@
 module MainBot
-	require_relative 'bot/extras/cron'
+	include Sys
+	require 'active_support'
+	require 'date'
+	require 'discordrb'
+	require 'discordrb/data'
+	require 'dotenv'
+	require 'json'
+	require 'rubygems'
+	require 'rufus-scheduler'
+	require 'sys/uptime'
+	require 'time'
+	require 'time_difference'
+	require 'yaml'
+	Dir["lib/bot/class/*.rb"].each {|file| require_relative file }
+	Dir["bot/extras/*.rb"].each {|file| require_relative file }
+	Dir["lib/bot/commands/*.rb"].each {|file| require_relative file }
 
 	Dotenv.load
 	puts "Credentials initialized!"
@@ -20,13 +35,10 @@ module MainBot
 	end while pos < permarray.length
 	puts "Permission Loaded!"
 
-	#Commands
-	$bot.include! Commands::Ping
-	$bot.include! Commands::Invite
-	$bot.include! Commands::Game
-	$bot.include! Commands::Kill
-	$bot.include! Commands::Remindme
-	$bot.include! Commands::Reminders
+	#Load all commands
+	Commands.constants.each do |x|
+		$bot.include! Commands.const_get x
+	end
 	puts "Commands Loaded"
 	
 	#Turn off debugging and run async
