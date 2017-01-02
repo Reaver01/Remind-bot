@@ -1,13 +1,12 @@
 module MainBot
+	#load env variables
 	Dotenv.load
-	puts "Credentials initialized!"
 
 	#sets bot prefix
 	$prefix = '!'
 
 	#Loads and establishes $bot object
 	$bot = Discordrb::Commands::CommandBot.new token: ENV['TOKEN'], client_id: ENV['CLIENT'], prefix: $prefix, advanced_functionality: false
-	puts "$bot Loaded!"
 
 	#Loads permissions from array
 	permarray = [150278590494277632,999,"reaver01"]
@@ -16,13 +15,11 @@ module MainBot
 		$bot.set_user_permission(permarray[pos],permarray[pos+1])
 		pos += 3
 	end while pos < permarray.length
-	puts "Permission Loaded!"
 
 	#Load all commands
 	Commands.constants.each do |x|
 		$bot.include! Commands.const_get x
 	end
-	puts "Commands Loaded"
 	
 	#Turn off debugging and run async
 	$bot.debug = false
@@ -34,12 +31,10 @@ module MainBot
 	else
 		$bot.game = 0
 	end
-	puts "Game set!"	
 	
 	#start cron
 	cronjobs_start
 
-	puts 'Sync Confirmed!'
 	puts 'SKYNET ONLINE'
 	$bot.sync
 end
