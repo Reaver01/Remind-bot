@@ -13,7 +13,7 @@ module MainBot
 	require 'yaml'
 	include Sys
 	require_relative 'bot/extras/cron'
-	Dir["lib/bot/commands/*.rb"].each {|file| require_relative file }
+	Dir["bot/commands/*.rb"].each {|file| require_relative file }
 
 	Dotenv.load
 	puts "Credentials initialized!"
